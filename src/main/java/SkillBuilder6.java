@@ -17,7 +17,13 @@ public class SkillBuilder6
      */
     public static double[] prefixAverage(double[] data)
     {
-        //TODO: replace this line with your code.
+        double[] result = new double[data.length];
+        double sum = 0;
+        for(int i = 0; i< data.length; i++){
+            sum += data[i];
+            result[i] = sum / (i + 1);
+        }
+        return result;
     }
 
     /**
@@ -28,9 +34,14 @@ public class SkillBuilder6
      * @param anArray array in which to look for a value
      * @returns index of the value in the array; -1 otherwise.
      */
-    public static int  indexOf(int searchValue, int[] anArray)
+    public static int indexOf(int searchValue, int[] anArray)
     {
-        //TODO: replace this line with your code.
+        for(int i = 0; i < anArray.length; i++){
+            if (anArray[i] == searchValue){
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -41,9 +52,14 @@ public class SkillBuilder6
      * @param anArray array in which to look for a value
      * @returns index of the string s in the array; -1 otherwise.
      */
-    public static int  indexOf(String s, String[] anArray)
+    public static int indexOf(String s, String[] anArray)
     {
-        //TODO: replace this line with your code.
+        for (int i = 0; i < anArray.length; i++){
+            if(anArray[i].equals(s)){
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -55,7 +71,16 @@ public class SkillBuilder6
      */
     public static String[] remove(String s, String[] anArray)
     {
-        //TODO: replace this line with your code.
+        String[] newArray = new String[anArray.length - 1];
+        int index = 0;
+
+        for (String string : anArray) {
+            if (!string.equals(s)) {
+                newArray[index] = string;
+                index++;
+            }
+        }
+        return newArray;
     }
 
     /**
@@ -64,6 +89,8 @@ public class SkillBuilder6
      */
     public static void reverse(int[] anArray)
     {
-        //TODO: replace this line with your code.
+        for (int i = anArray.length -1 ; i >= 0; i--){
+            System.out.print(anArray[i]);
+        }
     }
 }
